@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures it takes at least the full viewport height */
+    margin: 0;
+    background: linear-gradient(135deg, #FDF8F0, #D98C4A); /* Creamy to warm orange gradient */
+    color: #3A2F2B; /* Deep earthy brown for text */
+    padding: 20px; /* Add some padding for smaller screens */
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    border-radius: 15px; /* More rounded corners */
+    background-color: #FDF8F0; /* Creamy white background */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Softer, slightly larger shadow */
+    max-width: 450px; /* Slightly wider container for better aesthetics */
+    width: 100%; /* Ensures responsiveness on smaller screens */
+    animation: fadeIn 0.8s ease-out; /* Simple fade-in animation */
+}
+
+h1 {
+    font-family: 'Lora', serif; /* Elegant serif font for headings */
+    color: #6B3F2E; /* Deep earthy brown */
+    margin-bottom: 30px;
+    font-size: 2.8em; /* Larger heading */
+    font-weight: 700; /* Bolder heading */
+}
+
+#password-display {
+    padding: 18px; /* More padding inside the display box */
+    margin: 25px 0;
+    font-size: 1.4em; /* Larger font for the generated password */
+    border: 2px solid #C79F5E; /* Muted gold border */
+    border-radius: 10px; /* More rounded corners */
+    background-color: #FFFDF9; /* Slightly off-white for the display */
+    min-height: 60px; /* Ensures enough height even if empty */
+    display: flex; /* Use flexbox for vertical centering of text */
+    align-items: center;
+    justify-content: center;
+    word-break: break-all; /* Ensures long passwords wrap correctly */
+    font-weight: 600; /* Semi-bold password text */
+    color: #3A2F2B; /* Dark earthy text */
+    user-select: all; /* Allows easy selection of the password */
+    cursor: text; /* Indicates the text is selectable */
+    transition: all 0.3s ease; /* Smooth transition for any changes */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1); /* Subtle inner shadow */
+}
+
+#password-display:empty::before {
+    content: 'Click "Generate" to get a password'; /* Placeholder text when empty */
+    color: #A08060; /* Softer placeholder color */
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+#generate-btn {
+    padding: 14px 35px; /* Larger button */
+    font-size: 1.2em; /* Larger font for button text */
+    cursor: pointer;
+    border: none;
+    border-radius: 10px; /* More rounded button */
+    background-color: #D98C4A; /* Warm orange */
+    color: white;
+    font-weight: 600; /* Semi-bold button text */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    outline: none; /* Remove outline on focus */
+    box-shadow: 0 6px 15px rgba(217, 140, 74, 0.4); /* Shadow for the button */
+}
+
+#generate-btn:hover {
+    background-color: #C77A3F; /* Slightly darker orange on hover */
+    transform: translateY(-4px); /* More pronounced lift effect */
+    box-shadow: 0 8px 20px rgba(217, 140, 74, 0.5); /* Larger shadow on hover */
+}
+
+#generate-btn:active {
+    transform: translateY(0); /* Press effect */
+    box-shadow: 0 3px 8px rgba(217, 140, 74, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
